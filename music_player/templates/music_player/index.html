@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Music Player</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      li {
+        width: 25%;
+        margin-bottom: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      li a {
+        background-color: #007bff;
+        text-decoration: none;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 2px;
+        margin-left: 10px;
+      }
+
+      li a:hover {
+        background-color: #0365cd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Music Player</h1>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% else %}
+    <ul>
+      {% for song in songs %}
+      <li>
+        {{ song.title }}
+        <a href="{% url 'play_song' song.id %}">Play</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <a href="/upload">Upload</a>
+  </body>
+</html>

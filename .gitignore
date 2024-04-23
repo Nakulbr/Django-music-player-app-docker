@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+__pycache__
+
+# Ignore the virtual environment directory
+venv/
+.env/
+
+# Ignore database files
+*.sqlite3
+
+# Ignore static files directory
+/staticfiles/
+
+# Ignore media files directory
+/media/
+
+# Ignore local settings file
+local_settings.py
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore backup files
+*.bak
+
+# Ignore development-specific files
+*.swp
+*.swo
+*.vscode/
+*.idea/
+*.DS_Store
